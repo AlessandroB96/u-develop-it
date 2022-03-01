@@ -1,3 +1,6 @@
+//connecting to mysql database 
+const mysql = require('mysql2');
+
 const express = require('express');
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -20,3 +23,14 @@ app.listen(PORT, () => {
 app.use((req, res) => {
     res.status(404).end();
 });
+
+//connect to database 
+const db = mysql.createConnection(
+    {
+        host: 'localhost',
+        user: 'root',
+        password: 'Altin1526!/',
+        database: 'election'
+    },
+    console.log('connected to the election database')
+);
