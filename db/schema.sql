@@ -15,7 +15,7 @@ CREATE TABLE candidates (
     party_id INTEGER,
     industry_connected BOOLEAN NOT NULL,
     CONSTRAINT fk_party FOREIGN KEY (party_id) REFERENCES parties(id) ON DELETE SET NULL 
+);
     --constraint lien allows us to flag party_id as a foriegn key for linking tables tells sql which table and feild it references
     --on delete set null tells sql to set candidates party_id to null if row in parties is deleted
-);
 
